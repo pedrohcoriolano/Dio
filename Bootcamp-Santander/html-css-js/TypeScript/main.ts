@@ -1,23 +1,15 @@
-interface animal  {
+
+interface pessoa {
     nome: string,
-    tipo: 'terrestre' | 'aquatico',
-    domestico: boolean,
+    idade: number,
+    nacionalidade: string,
 }
 
-interface Felino extends animal {
-    visao_noturna: boolean,
+interface Brasileiro extends Omit<pessoa, 'nacionalidade'> {
 
 }
 
-interface canino extends animal {
-    tamanho: 'pequeno' | 'medio'| 'grande',
-}
-
-type animal_domestico = canino | Felino
-
-const animal: animal_domestico = {
-    nome: 'cachorro',
-    tipo: "terrestre",
-    domestico: true,
-    tamanho: 'pequeno',
+const br:Brasileiro = {
+    nome: 'pedro',
+    idade: 10
 }
